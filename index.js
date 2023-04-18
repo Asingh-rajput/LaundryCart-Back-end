@@ -12,7 +12,9 @@ require('./models/user')
 require('./models/order')
 
 app.use(express.json())//parsing the req before it get to routes
-app.use(cors())
+app.use(cors({
+    origin: "https://laundry-cart-frontg18.onrender.com",
+}))
 
 app.use(require('./routes/auth'))
 app.use(require('./routes/order'))
